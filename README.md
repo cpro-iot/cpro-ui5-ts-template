@@ -72,6 +72,8 @@ You can use the two `dockerfiles` for a more sophisticated setup.
 - Clone this repos
 - Run `npm run dev`
 
+If you're running on docker-compose, add the following to your docker-compose.yaml to run this setup in development mode.
+
 ```yaml
 client:
   build:
