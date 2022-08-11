@@ -26,7 +26,7 @@ UI5 is an great framework to develop enterprise grad web applications. It comes 
 - `ConfigModel`, an interface that provides controlled access the the SAP UI5 `Core` class
 - `BaseController`, an extended `Controller` for reusable handler methods
 - UI5 Typescript types
-- Two fragment presets with example code in the `BaseController`
+- Three fragment presets with example code in the `BaseController`
 
 ### On top features
 
