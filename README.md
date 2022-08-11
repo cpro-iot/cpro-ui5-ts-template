@@ -40,6 +40,7 @@ UI5 is an great framework to develop enterprise grad web applications. It comes 
 - UI5 built-in form validation (TBD)
 - Table export using [Xlsx](https://www.npmjs.com/package/xlsx)
 - Set Fiori theme to dark mode + change languages in a dedicated `Settings` - Fragment
+- A message - manager for user feedback
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
