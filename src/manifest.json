@@ -1,0 +1,112 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "cpro.ui5.__kunde__.__projekt__",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "1.0.0"
+    },
+    "title": "{{title}}",
+    "description": "{{description}}",
+    "resources": "resources.json",
+    "ach": "ach"
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "cpro.ui5.__kunde__.__projekt__.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "cpro.ui5.__kunde__.__projekt__.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "cpro.ui5.__kunde__.__projekt__.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "home",
+          "target": ["home"]
+        },
+        {
+          "pattern": "todo/{todoId}",
+          "name": "todo",
+          "target": ["todo"]
+        },
+        {
+          "pattern": "about",
+          "name": "about",
+          "target": ["about"]
+        }
+      ],
+      "targets": {
+        "home": {
+          "viewName": "Home",
+          "viewId": "home",
+          "viewLevel": 1
+        },
+        "todo": {
+          "viewName": "Todo",
+          "viewId": "todo",
+          "viewLevel": 2
+        },
+        "about": {
+          "viewName": "About",
+          "viewId": "about",
+          "viewLevel": 2
+        }
+      }
+    }
+  }
+}

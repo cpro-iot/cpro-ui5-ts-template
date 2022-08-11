@@ -1,0 +1,61 @@
+<mvc:View controllerName="cpro.ui5.__kunde__.__projekt__.controller.Home" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+	<Page>
+		<customHeader>
+			<OverflowToolbar>
+				<Image src="assets/logo.jpg" height="30px" />
+				<Title text="{i18n>app-title}" />
+				<ToolbarSpacer />
+				<Button icon="sap-icon://key-user-settings" tooltip="Administration" press="openSettings" />
+			</OverflowToolbar>
+
+		</customHeader>
+
+		<content>
+			<Table inset="false" items="{todo>/collection}">
+				<headerToolbar>
+					<OverflowToolbar>
+						<content>
+							<Title text="{i18n>table-users-title}" />
+							<ToolbarSpacer />
+
+							<Button icon="sap-icon://excel-attachment" tooltip="{i18n>table-users-toolbar-download}" press="onPressExport" />
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="12em">
+						<Text text="{i18n>table-users-column-userid}" />
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>table-users-column-todoId}" />
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+						<Text text="{i18n>table-users-column-todoTitle}" />
+					</Column>
+					<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+						<Text text="{i18n>table-users-column-todoDone}" />
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" press="onPressTableItem" vAlign="Middle">
+						<cells>
+							<Text text="{todo>userId}" />
+							<Text text="{todo>id}" />
+							<Text text="{todo>title}" />
+							<Text text="{todo>completed}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+		<footer>
+			<OverflowToolbar>
+				<Button type="" icon="sap-icon://bell" text="{= ${messages>/collection}.length }" visible="{= ${messages>/collection}.length > 0 }" press="toggleMessageManager" />
+				<ToolbarSpacer />
+				<Button icon="sap-icon://hint" type="Info" press="onPressInfoButton" />
+				<Button text="{i18n>label-save}" type="Accept" press="onPressSuccessButton" />
+				<Button text="{i18n>label-cancel}" type="Reject" press="onPressCancelButton" />
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,25 @@
+<mvc:View controllerName="cpro.ui5.__kunde__.__projekt__.controller.Home" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc">
+    <Page navButtonPress="navToHome" showNavButton="true" title="{i18n>label-about}">
+        <l:BlockLayout background="Dashboard" class="ui-center-container">
+            <l:BlockLayoutRow accentCells="Accent1">
+                <l:BlockLayoutCell>
+                    <VBox alignItems="Center" width="24em">
+                        <Image class="sapUiSmallMarginBottom" src="assets/cpro-logo.jpg" height="80px" />
+                        <Title class="sapUiSmallMarginBottom" text="{i18n>app-title}" />
+                    </VBox>
+
+                    <VBox class="sapUiMediumMarginBottom" alignItems="Center" width="24em">
+                        <Text class="sapUiSmallMarginBottom" text="{i18n>app-description}" />
+                        <Link target="_blank" href="https://www.cpro-iot.de/" text="{i18n>about-href-cpro}" />
+                    </VBox>
+                    <Panel expandable="true" width="24em" headerText="{i18n>about-attributions}">
+                        <content>
+                            <Link href="https://docs.sheetjs.com/docs/miscellany/license" text="SheetJS is licensed under the Apache 2.0 License" />
+                            <Link href="https://github.com/SAP/openui5/blob/master/LICENSE.txt" text="OpenUI5 is licensed under the Apache 2.0 License" />
+                        </content>
+                    </Panel>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+        </l:BlockLayout>
+    </Page>
+</mvc:View>

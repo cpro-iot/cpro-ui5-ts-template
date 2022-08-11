@@ -1,0 +1,23 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout">
+    <ResponsivePopover title="{i18n>fragment-settings-title}" placement="Bottom" contentWidth="18rem">
+
+        <endButton>
+            <Button text="{i18n>label-close}" press="closeSettings" />
+        </endButton>
+        <content>
+            <l:VerticalLayout class="sapUiContentPadding" width="100%">
+                <Label text="{i18n>fragment-settings-label-language}" design="Bold" />
+                <HBox>
+                    <Image alt="{i18n>fragment-settings-image-language-alt-de}" tooltip="{i18n>fragment-settings-image-language-alt-de}" class="sapUiSmallMarginEnd" src="assets/flag-de.png" height="15px" press="setLanguage('de')" />
+                    <Image alt="{i18n>fragment-settings-image-language-alt-en}" tooltip="{i18n>fragment-settings-image-language-alt-en}" class="sapUiSmallMarginEnd" src="assets/flag-en.png" height="15px" press="setLanguage('en')" />
+                </HBox>
+
+                <Label for="theme-button" text="{i18n>fragment-settings-label-theme}" design="Bold" />
+                <Button id="theme-button" icon="sap-icon://lightbulb" tooltip="{i18n>fragment-settings-label-theme}" press="toggleDarkTheme" />
+
+                <Link text="{i18n>label-about}" press="navToAbout" />
+
+            </l:VerticalLayout>
+        </content>
+    </ResponsivePopover>
+</core:FragmentDefinition>
