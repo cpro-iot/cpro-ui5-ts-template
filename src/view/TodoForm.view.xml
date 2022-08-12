@@ -1,0 +1,55 @@
+<mvc:View controllerName="cpro.ui5.__kunde__.__projekt__.controller.TodoForm" xmlns:form="sap.ui.layout.form" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc">
+    <Page navButtonPress="navToHome" showNavButton="true" title="{i18n>app-title}">
+        <content>
+            <form:Form id="contactForm" editable="true">
+                <form:title>
+                    <core:Title text="Enter your new todo data" />
+                </form:title>
+                <form:layout>
+                    <form:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+                </form:layout>
+                <form:formContainers>
+                    <form:FormContainer>
+
+                        <!-- Form control for the todo title attribute -->
+                        <form:FormElement>
+                            <form:label>
+                                <Label labelFor="todoTitle" text="Todo title" />
+                            </form:label>
+                            <form:fields>
+                                <Input id="todoTitle" value="{path: 'todo>/form/title'}" placeholder="Please enter a title for your todo" />
+                            </form:fields>
+                        </form:FormElement>
+
+                        <!-- Form control for the todo title attribute -->
+                        <form:FormElement>
+                            <form:label>
+                                <Label labelFor="todoDescription" text="Todo description" />
+                            </form:label>
+                            <form:fields>
+                                <Input id="todoDescription" value="{path: 'todo>/form/description'}" placeholder="Please enter a title for your todo" />
+                            </form:fields>
+                        </form:FormElement>
+
+                        <!-- Form control for the completed attribute  -->
+                        <form:FormElement>
+                            <form:label>
+                                <Label text="Mark as done" labelFor="todoCompleted" />
+                            </form:label>
+                            <form:fields>
+                                <Switch id="todoCompleted" state="{todo>/form/completed}" customTextOn="Yes" customTextOff="No" />
+                            </form:fields>
+                        </form:FormElement>
+                    </form:FormContainer>
+                </form:formContainers>
+            </form:Form>
+        </content>
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button text="{i18n>label-save}" type="Accept" press="onPressAcceptButton" />
+                <Button text="{i18n>label-cancel}" type="Reject" press="onPressRejectButton" />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

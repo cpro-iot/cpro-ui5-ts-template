@@ -85,6 +85,11 @@
           "target": ["todo"]
         },
         {
+          "pattern": "form",
+          "name": "form",
+          "target": ["form"]
+        },
+        {
           "pattern": "about",
           "name": "about",
           "target": ["about"]
@@ -99,6 +104,11 @@
         "todo": {
           "viewName": "Todo",
           "viewId": "todo",
+          "viewLevel": 2
+        },
+        "form": {
+          "viewName": "TodoForm",
+          "viewId": "form",
           "viewLevel": 2
         },
         "about": {

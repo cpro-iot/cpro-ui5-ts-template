@@ -11,25 +11,20 @@ export default class HomeController extends BaseController {
     messageModel.register(this);
     todoModel.register(this);
     todoModel.syncTodos();
-    console.log(this.getOwnerComponent().getManifest());
   }
-
   onPressTableItem(oEvent: Event) {
     const todoPath = (oEvent.getSource() as ManagedObject)
       .getBindingContext("todo")
       .getPath();
     const todoItem = todoModel.getProperty(todoPath);
-
     this.getRouter().navTo("todo", { todoId: todoItem.id });
   }
-
   onPressExport() {
-    this.getView().setBusy(true);
     todoModel.exportTodosToExcel();
-    messageModel.addInfoMessage({ message: "You pressed the INFO button" });
-    this.getView().setBusy(false);
+    messageModel.addInfoMessage({
+      message: "You exported your todos as an excel file",
+    });
   }
-
   onPressInfoButton() {
     messageModel.addInfoMessage({
       message: "You pressed the INFO button",

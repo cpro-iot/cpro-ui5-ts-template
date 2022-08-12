@@ -47,17 +47,37 @@ const initialTodos = [
   },
 ];
 
+const initialForm = {
+  userId: 1,
+  id: 0,
+  title: "",
+  description: "",
+  completed: false,
+};
+
 /**
  * @namespace cpro.ui5.__kunde__.__projekt__.model.Todo
  */
 export default class TodoModel extends BaseModel<Todo> {
   setActiveTodoFromCollection(todoId: number) {
-    const activeTodo = this.getCollection().find((todo) => todo.id === todoId);
-    return this.setActiveItem(activeTodo);
+    const activeTodo = this.getCollection().find((todo) => {
+      return +todo.id == +todoId;
+    });
+    console.log(activeTodo);
+    return this.setActiveItem({ ...activeTodo });
   }
 
   async syncTodos() {
     this.setCollection(initialTodos);
+    this.setProperty("/form", { ...initialForm });
+  }
+
+  public addFormToCollection() {
+    const collection = this.getProperty("/collection");
+    const id = collection.length + 1;
+    const newEntry = { ...this.getProperty("/form"), id };
+    this.setProperty("/collection", [...collection, newEntry]);
+    this.setProperty("/form", { ...initialForm });
   }
 
   async exportTodosToExcel() {

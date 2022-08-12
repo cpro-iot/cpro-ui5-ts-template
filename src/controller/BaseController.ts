@@ -30,6 +30,10 @@ export default class BaseController extends Controller {
     this.getRouter().navTo("about");
   }
 
+  public navToNewTodoForm(): void {
+    this.getRouter().navTo("todo-form");
+  }
+
   protected toggleDarkTheme(): void {
     this.getView().setBusy(true);
     configModel.toggleFioriTheme();

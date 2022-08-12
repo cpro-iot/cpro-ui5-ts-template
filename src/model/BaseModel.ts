@@ -11,9 +11,7 @@ export default class BaseModel<T> extends JSONModel {
     super();
     this.modelName = modelName;
     this.setData({
-      form: {
-        title: "Initial Title",
-      },
+      form: {},
       activeItem: {},
       collection: [],
     });

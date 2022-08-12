@@ -19,7 +19,7 @@
 							<ToolbarSpacer />
 
 							<Button icon="sap-icon://excel-attachment" tooltip="{i18n>table-users-toolbar-download}" press="onPressExport" />
-							<Button icon="sap-icon://add" tooltip="{i18n>table-users-toolbar-new-todo}" press="openNewTodoDialog" />
+							<Button icon="sap-icon://add" tooltip="{i18n>table-users-toolbar-new-todo}" press="navToNewTodoForm" />
 						</content>
 					</OverflowToolbar>
 				</headerToolbar>
@@ -51,9 +51,9 @@
 		</content>
 		<footer>
 			<OverflowToolbar>
-				<Button type="" icon="sap-icon://bell" text="{= ${messages>/collection}.length }" visible="{= ${messages>/collection}.length > 0 }" press="toggleMessageManager" />
+				<Button icon="sap-icon://bell" text="{= ${messages>/collection}.length }" visible="{= ${messages>/collection}.length > 0 }" press="toggleMessageManager" />
 				<ToolbarSpacer />
-				<Button icon="sap-icon://hint" type="Info" press="onPressInfoButton" />
+				<Button icon="sap-icon://hint" type="Ghost" press="onPressInfoButton" />
 				<Button text="{i18n>label-save}" type="Accept" press="onPressSuccessButton" />
 				<Button text="{i18n>label-cancel}" type="Reject" press="onPressCancelButton" />
 			</OverflowToolbar>
