@@ -3,11 +3,12 @@ import { todoModel } from "../model/provider";
 import Event from "sap/ui/base/Event";
 
 /**
- * @namespace cpro.ui5.__kunde__.__projekt__.controller.Home
+ * @namespace cpro.ui5.__kunde__.__projekt__.controller.Todo
  */
-export default class HomeController extends BaseController {
+export default class TodoController extends BaseController {
   onInit() {
     todoModel.register(this);
+    todoModel.syncTodos();
     this.getRouter()
       .getRoute("todo")
       .attachPatternMatched(this._onObjectMatched, this);
@@ -15,6 +16,6 @@ export default class HomeController extends BaseController {
 
   async _onObjectMatched(oEvent: Event) {
     const { todoId } = oEvent.getParameter("arguments");
-    await todoModel.setActiveTodoFromCollection(todoId);
+    todoModel.setActiveTodoFromCollection(todoId);
   }
 }
