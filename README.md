@@ -20,6 +20,29 @@
 
 UI5 is an great framework to develop enterprise grad web applications. It comes with a lot of functionality out of the box. This repository aims to capture the best of these and provide an entry point for web developers striding to deliver the UI5 feeling to their web applications.
 
+### Why another template?
+
+There already is stuff like Yeoman & other UI5 templates on the www. Especially with the rise of web components, developing UI5 apps in React is a good alternative to the conventional approach.
+
+So you should use this template if you
+
+- prefer working closer to the core project
+- would like to use (or keep using) all the base resources UI5 offers, such as
+  - out of the box i18n support
+  - built-in routing and form validation
+  - [samples](https://ui5.sap.com/#/controls) and a [full API reference](https://ui5.sap.com/#/api)
+  - other useful [core packages & tooling](https://ui5.sap.com/#/tools)
+- work in a bigger team and prefer using Typescript over JS
+- would like to build a prototype that can be quickly extended
+
+You should **not** use this template if you
+
+- are new to UI5 development (in this case, a Yeoman generator can provide more guidance)
+- prefer [UI5 Web Components](https://sap.github.io/ui5-webcomponents-react/?path=/story/getting-started--page)
+- prefer using Javascript
+- need just a quick throwaway - prototype
+- use primarily OData (feature is yet to be implemented)
+
 ### Basic Features:
 
 - `BaseModel`, an extended `JSONModel` with HTTP methods \*
@@ -37,10 +60,10 @@ UI5 is an great framework to develop enterprise grad web applications. It comes 
 
 ### Demo features
 
-- UI5 built-in form validation (TBD)
-- Table export using [Xlsx](https://www.npmjs.com/package/xlsx)
-- Set Fiori theme to dark mode + change languages in a dedicated `Settings` - Fragment
-- A message - manager for user feedback
+- UI5 built-in form validation - See [Code Controller](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/controller/TodoForm.controller.ts#L42), [View Form Template](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/view/TodoForm.view.xml#L23), [Manifest Configuration](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/manifest.json#L34) `"handleValidation": true` under `sap-ui5`
+- Table export using [Xlsx](https://www.npmjs.com/package/xlsx) - See [Todo Model](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/model/Todo.model.ts#L83)
+- Set Fiori theme to dark mode + change languages in a dedicated `Settings` - Fragment - See [Config Model](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/model/Config.model.ts) and [Settings Fragment](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/view/Fragments/Settings.fragment.xml)
+- A message - manager for user feedback - See [Message Model](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/model/Message.model.ts) and [Messages Fragment](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/view/Fragments/Messages.fragment.xml). See also [Todo Form Controller](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/src/controller/TodoForm.controller.ts) for implementation example
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
