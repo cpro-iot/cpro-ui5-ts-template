@@ -107,6 +107,16 @@ client:
     - "80"
 ```
 
+## Screenshots
+
+### Fiori 3 Light & Darkmode
+
+TBD
+
+### Message manager and settings menu
+
+TBD
+
 ## Sources
 
 Language flags: Wikimedia Commons: Flags: https://commons.wikimedia.org/w/index.php?search=flags&title=Special:MediaSearch&go=Go&type=image
