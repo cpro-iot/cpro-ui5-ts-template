@@ -1,5 +1,5 @@
-import Controller from "sap/ui/core/mvc/Controller";
-import JSONModel from "sap/ui/model/json/JSONModel";
+import Controller from 'sap/ui/core/mvc/Controller';
+import JSONModel from 'sap/ui/model/json/JSONModel';
 
 /**
  * @namespace cpro.ui5.__kunde__.__projekt__.model.BaseModel
@@ -22,18 +22,18 @@ export default class BaseModel<T> extends JSONModel {
   }
 
   public setActiveItem(data: T) {
-    this.setProperty("/activeItem", data);
+    this.setProperty('/activeItem', data);
   }
 
   public getActiveItem(): T {
-    return this.getProperty("/activeItem");
+    return this.getProperty('/activeItem');
   }
 
   public setCollection(data: T[]) {
-    this.setProperty("/collection", data);
+    this.setProperty('/collection', data);
   }
 
   public getCollection(): T[] {
-    return this.getProperty("/collection");
+    return this.getProperty('/collection');
   }
 }

@@ -1,6 +1,6 @@
-import { MessageType } from "sap/ui/core/library";
-import Message from "sap/ui/core/message/Message";
-import BaseModel from "./BaseModel";
+import { MessageType } from 'sap/ui/core/library';
+import Message from 'sap/ui/core/message/Message';
+import BaseModel from './BaseModel';
 
 interface AppMessage {
   message: string;

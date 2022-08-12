@@ -1,26 +1,26 @@
-import Router from "sap/f/routing/Router";
-import Controller from "sap/ui/core/mvc/Controller";
-import { configModel } from "../model/provider";
-import { AppUserLanguage } from "../model/Config.model";
-import Event from "sap/ui/base/Event";
-import Popover from "sap/m/Popover";
-import Fragment from "sap/ui/core/Fragment";
+import Router from 'sap/f/routing/Router';
+import Controller from 'sap/ui/core/mvc/Controller';
+import { configModel } from '../model/provider';
+import { AppUserLanguage } from '../model/Config.model';
+import Event from 'sap/ui/base/Event';
+import Popover from 'sap/m/Popover';
+import Fragment from 'sap/ui/core/Fragment';
 
 /**
  * @namespace cpro.ui5.__kunde__.__projekt__.controller.BaseController
  */
 export default class BaseController extends Controller {
   private settingsPopoverPath: string =
-    "cpro/ui5/__kunde__/__projekt__/view/Fragments/Settings";
+    'cpro/ui5/__kunde__/__projekt__/view/Fragments/Settings';
   private messagesPopoverPath: string =
-    "cpro/ui5/__kunde__/__projekt__/view/Fragments/Messages";
+    'cpro/ui5/__kunde__/__projekt__/view/Fragments/Messages';
 
   private popovers: Record<string, Popover> = {};
 
   public getAppResourceBundleText(identifier: string): string {
     return (
       this.getOwnerComponent()
-        .getModel("i18n")
+        .getModel('i18n')
         // @ts-ignore
         .getResourceBundle()
         .getText(identifier)
@@ -32,15 +32,15 @@ export default class BaseController extends Controller {
   }
 
   public navToHome(): void {
-    this.getRouter().navTo("home");
+    this.getRouter().navTo('home');
   }
 
   public navToAbout(): void {
-    this.getRouter().navTo("about");
+    this.getRouter().navTo('about');
   }
 
   public navToNewTodoForm(): void {
-    this.getRouter().navTo("todo-form");
+    this.getRouter().navTo('todo-form');
   }
 
   protected toggleDarkTheme(): void {
