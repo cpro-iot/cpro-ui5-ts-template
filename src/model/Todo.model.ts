@@ -63,13 +63,23 @@ export default class TodoModel extends BaseModel<Todo> {
     const activeTodo = this.getCollection().find((todo) => {
       return +todo.id == +todoId;
     });
-    console.log(activeTodo);
     return this.setActiveItem({ ...activeTodo });
   }
 
   async syncTodos() {
     this.setCollection(initialTodos);
     this.setProperty("/form", { ...initialForm });
+  }
+
+  updateActiveTodoInCollection() {
+    const todoCollection = this.getCollection();
+    const activeTodoItem = this.getActiveItem();
+
+    const activeTodoIndex = todoCollection.findIndex((collectionItem) => {
+      return +collectionItem.id === +activeTodoItem.id;
+    });
+    todoCollection.splice(activeTodoIndex, 1, { ...activeTodoItem });
+    this.setCollection(todoCollection);
   }
 
   public addFormToCollection() {

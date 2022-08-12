@@ -3,7 +3,7 @@
         <content>
             <form:Form id="contactForm" editable="true">
                 <form:layout>
-                    <form:ResponsiveGridLayout />
+                    <form:ResponsiveGridLayout labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
                 </form:layout>
                 <form:formContainers>
                     <form:FormContainer>
@@ -14,7 +14,29 @@
                                 <Label labelFor="todoTitle" text="Todo title" />
                             </form:label>
                             <form:fields>
-                                <Input id="todoTitle" value="{path: 'todo>/activeItem/title'}" placeholder="Please enter the contact's title" />
+                                <Input required="true" fieldGroupIds="todoFormInput" id="todoTitle" value="{
+                                    path: 'todo>/activeItem/title', 
+                                    type: 'sap.ui.model.type.String',
+                                    constraints: {
+                                        minLength: 3,
+                                        maxLength: 15
+                                    }}" placeholder="Please enter a title for your todo" />
+                            </form:fields>
+                        </form:FormElement>
+
+                        <!-- Form control for the todo title attribute -->
+                        <form:FormElement>
+                            <form:label>
+                                <Label labelFor="todoDescription" text="Todo description" />
+                            </form:label>
+                            <form:fields>
+                                <Input required="true" fieldGroupIds="todoFormInput" id="todoDescription" value="{
+                                    path: 'todo>/activeItem/description',
+                                    type: 'sap.ui.model.type.String',
+                                    constraints: {
+                                        minLength: 5,
+                                        maxLength: 255
+                                    }}" placeholder="Please enter a description for your todo" />
                             </form:fields>
                         </form:FormElement>
 
@@ -24,7 +46,7 @@
                                 <Label text="Mark as done" labelFor="todoCompleted" />
                             </form:label>
                             <form:fields>
-                                <Switch id="todoCompleted" state="{todo>/activeItem/completed}" customTextOn="Yes" customTextOff="No" />
+                                <Switch id="todoCompleted" state="{todo>/form/completed}" customTextOn="Yes" customTextOff="No" />
                             </form:fields>
                         </form:FormElement>
                     </form:FormContainer>
@@ -34,8 +56,8 @@
         <footer>
             <OverflowToolbar>
                 <ToolbarSpacer />
-                <Button text="{i18n>label-save}" type="Accept" />
-                <Button text="{i18n>label-cancel}" type="Reject" />
+                <Button text="{i18n>label-save}" type="Accept" press="onPressAcceptButton" />
+                <Button text="{i18n>label-cancel}" type="Reject" press="onPressRejectButton" />
             </OverflowToolbar>
         </footer>
     </Page>

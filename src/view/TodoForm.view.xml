@@ -39,7 +39,7 @@
                                     constraints: {
                                         minLength: 5,
                                         maxLength: 255
-                                    }}" placeholder="Please enter a title for your todo" />
+                                    }}" placeholder="Please enter a description for your todo" />
                             </form:fields>
                         </form:FormElement>
 
@@ -49,7 +49,7 @@
                                 <Label text="Mark as done" labelFor="todoCompleted" />
                             </form:label>
                             <form:fields>
-                                <Switch id="todoCompleted" state="{todo>/form/completed}" customTextOn="Yes" customTextOff="No" />
+                                <Switch id="todoCompleted" state="{todo>/active/completed}" customTextOn="Yes" customTextOff="No" />
                             </form:fields>
                         </form:FormElement>
                     </form:FormContainer>

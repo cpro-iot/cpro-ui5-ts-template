@@ -17,6 +17,15 @@ export default class BaseController extends Controller {
 
   private popovers: Record<string, Popover> = {};
 
+  public getAppResourceBundleText(identifier: string): string {
+    return (
+      this.getOwnerComponent()
+        .getModel("i18n")
+        // @ts-ignore
+        .getResourceBundle()
+        .getText(identifier)
+    );
+  }
   public getRouter(): Router {
     // @ts-ignore
     return this.getOwnerComponent().getRouter();
