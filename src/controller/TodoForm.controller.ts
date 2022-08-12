@@ -23,7 +23,6 @@ export default class TodoFormController extends BaseController {
 
   onPressAcceptButton() {
     const formErrors = this.handleContactFormValidation();
-    console.log(formErrors);
     if (formErrors.length === 0) {
       todoModel.addFormToCollection();
       MessageToast.show("Todo added!");
@@ -76,6 +75,4 @@ export default class TodoFormController extends BaseController {
 
     return contactFormErrors;
   }
-
-  onPressRejectButton() {}
 }
