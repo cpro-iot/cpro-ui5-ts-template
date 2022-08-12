@@ -111,11 +111,11 @@ client:
 
 ### Fiori 3 Light & Darkmode
 
-TBD
+![fiori three light and darkmode](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/.github/assets/screenshot-demo-theming.png?raw=true)
 
 ### Message manager and settings menu
 
-[!message manager and settings menu](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/.github/assets/screenshot-demo-settings-message-manager.png?raw=true)
+![message manager and settings menu](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/.github/assets/screenshot-demo-settings-message-manager.png?raw=true)
 
 ## Sources
 
