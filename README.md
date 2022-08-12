@@ -115,7 +115,7 @@ TBD
 
 ### Message manager and settings menu
 
-TBD
+[!message manager and settings menu](https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/.github/assets/screenshot-demo-settings-message-manager.png?raw=true)
 
 ## Sources
 
