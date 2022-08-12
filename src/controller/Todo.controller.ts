@@ -15,6 +15,6 @@ export default class HomeController extends BaseController {
 
   async _onObjectMatched(oEvent: Event) {
     const { todoId } = oEvent.getParameter("arguments");
-    await todoModel.syncActiveTodo(todoId);
+    await todoModel.setActiveTodoFromCollection(todoId);
   }
 }

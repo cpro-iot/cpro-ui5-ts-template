@@ -23,13 +23,13 @@
 					</OverflowToolbar>
 				</headerToolbar>
 				<columns>
-					<Column width="12em">
+					<Column width="8em" hAlign="Center">
 						<Text text="{i18n>table-users-column-userid}" />
 					</Column>
-					<Column minScreenWidth="Tablet" demandPopin="true">
+					<Column width="8em" hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
 						<Text text="{i18n>table-users-column-todoId}" />
 					</Column>
-					<Column minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+					<Column minScreenWidth="Desktop" demandPopin="true">
 						<Text text="{i18n>table-users-column-todoTitle}" />
 					</Column>
 					<Column minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
@@ -41,8 +41,8 @@
 						<cells>
 							<Text text="{todo>userId}" />
 							<Text text="{todo>id}" />
-							<Text text="{todo>title}" />
-							<Text text="{todo>completed}" />
+							<ObjectIdentifier title="{todo>title}" text="{todo>description}" />
+							<CheckBox selected="{todo>completed}" />
 						</cells>
 					</ColumnListItem>
 				</items>
