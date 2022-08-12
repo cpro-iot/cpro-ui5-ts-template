@@ -144,4 +144,4 @@ client:
 
 Language flags: Wikimedia Commons: Flags: https://commons.wikimedia.org/w/index.php?search=flags&title=Special:MediaSearch&go=Go&type=image
 
-\* Note: SAP recommends NOT to extend the JSONModel, I did it for the convenience
+\* Note: SAP recommends NOT to extend the JSONModel. Then again, this is an opinionated template
