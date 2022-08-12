@@ -31,6 +31,7 @@
   },
 
   "sap.ui5": {
+    "handleValidation": true,
     "rootView": {
       "viewName": "cpro.ui5.__kunde__.__projekt__.view.App",
       "type": "XML",
@@ -85,9 +86,9 @@
           "target": ["todo"]
         },
         {
-          "pattern": "form",
-          "name": "form",
-          "target": ["form"]
+          "pattern": "todo-form",
+          "name": "todo-form",
+          "target": ["todo-form"]
         },
         {
           "pattern": "about",
@@ -106,9 +107,9 @@
           "viewId": "todo",
           "viewLevel": 2
         },
-        "form": {
+        "todo-form": {
           "viewName": "TodoForm",
-          "viewId": "form",
+          "viewId": "todo-form",
           "viewLevel": 2
         },
         "about": {

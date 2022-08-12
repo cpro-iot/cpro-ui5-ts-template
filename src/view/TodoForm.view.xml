@@ -17,7 +17,13 @@
                                 <Label labelFor="todoTitle" text="Todo title" />
                             </form:label>
                             <form:fields>
-                                <Input id="todoTitle" value="{path: 'todo>/form/title'}" placeholder="Please enter a title for your todo" />
+                                <Input required="true" fieldGroupIds="todoFormInput" id="todoTitle" value="{
+                                    path: 'todo>/form/title', 
+                                    type: 'sap.ui.model.type.String',
+                                    constraints: {
+                                        minLength: 3,
+                                        maxLength: 15
+                                    }}" placeholder="Please enter a title for your todo" />
                             </form:fields>
                         </form:FormElement>
 
@@ -27,7 +33,13 @@
                                 <Label labelFor="todoDescription" text="Todo description" />
                             </form:label>
                             <form:fields>
-                                <Input id="todoDescription" value="{path: 'todo>/form/description'}" placeholder="Please enter a title for your todo" />
+                                <Input required="true" fieldGroupIds="todoFormInput" id="todoDescription" value="{
+                                    path: 'todo>/form/description',
+                                    type: 'sap.ui.model.type.String',
+                                    constraints: {
+                                        minLength: 5,
+                                        maxLength: 255
+                                    }}" placeholder="Please enter a title for your todo" />
                             </form:fields>
                         </form:FormElement>
 
@@ -46,6 +58,7 @@
         </content>
         <footer>
             <OverflowToolbar>
+                <Button icon="sap-icon://bell" text="{= ${messages>/collection}.length }" visible="{= ${messages>/collection}.length > 0 }" press="toggleMessageManager" />
                 <ToolbarSpacer />
                 <Button text="{i18n>label-save}" type="Accept" press="onPressAcceptButton" />
                 <Button text="{i18n>label-cancel}" type="Reject" press="onPressRejectButton" />
