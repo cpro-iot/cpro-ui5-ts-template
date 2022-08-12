@@ -4,12 +4,26 @@ import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import BaseController from "./BaseController";
 import { todoModel, messageModel } from "../model/provider";
-import { AppBinding, AppEventProvider } from "../@types/UI5Shims";
+import {
+  AppBinding,
+  AppEventProvider,
+  AppSortEventParameters,
+} from "../@types/UI5Shims";
+import Dialog from "sap/m/Dialog";
+import Fragment from "sap/ui/core/Fragment";
+import Sorter from "sap/ui/model/Sorter";
 
 /**
  * @namespace cpro.ui5.__kunde__.__projekt__.controller.Home
  */
 export default class HomeController extends BaseController {
+  private homeDialogTableFilterPath =
+    "cpro/ui5/__kunde__/__projekt__/view/Fragments/TableFilter";
+  private homeDialogTableSorterPath =
+    "cpro/ui5/__kunde__/__projekt__/view/Fragments/TodoTableSorter";
+
+  private homeDialogs: Record<string, Dialog> = {};
+
   onInit() {
     messageModel.register(this);
     todoModel.register(this);
@@ -40,6 +54,30 @@ export default class HomeController extends BaseController {
       appliedFilters.length === 0 ? [] : new Filter(appliedFilters, false)
     );
   }
+
+  async onOpenSorterDialog() {
+    const view = this.getView();
+
+    if (!this.homeDialogs[this.homeDialogTableSorterPath]) {
+      this.homeDialogs[this.homeDialogTableSorterPath] = (await Fragment.load({
+        name: this.homeDialogTableSorterPath,
+        controller: this,
+      })) as Dialog;
+      view.addDependent(this.homeDialogs[this.homeDialogTableSorterPath]);
+    }
+    this.homeDialogs[this.homeDialogTableSorterPath].open();
+  }
+
+  sortTodos(event: Event) {
+    const tableControl = this.getView().byId("table-users");
+    const parameters = event.getParameters() as AppSortEventParameters;
+    const key = parameters.sortItem.getKey();
+    const descending: boolean = parameters.sortDescending;
+    const sorters = [];
+    sorters.push(new Sorter(key, descending));
+    (tableControl.getBinding("items") as AppBinding).sort(sorters);
+  }
+
   onPressExport() {
     todoModel.exportTodosToExcel();
     messageModel.addInfoMessage({

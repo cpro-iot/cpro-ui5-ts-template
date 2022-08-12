@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <ViewSettingsDialog confirm="sortTodos">
+        <sortItems>
+            <ViewSettingsItem text="{i18n>table-users-column-userid}" key="userId" selected="true" />
+            <ViewSettingsItem text="{i18n>table-users-column-todoId}" key="id" />
+            <ViewSettingsItem text="{i18n>table-users-column-todoTitle}" key="title" />
+            <ViewSettingsItem text="{i18n>table-users-description}" key="description" />
+            <ViewSettingsItem text="{i18n>table-users-column-todoDone}" key="completed" />
+        </sortItems>
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

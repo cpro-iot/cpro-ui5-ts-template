@@ -18,6 +18,7 @@
 							<Title text="{i18n>table-users-title}" />
 							<ToolbarSpacer />
 							<Button icon="sap-icon://excel-attachment" tooltip="{i18n>table-users-toolbar-download}" press="onPressExport" />
+							<Button type="Transparent" tooltip="Sort" icon="sap-icon://sort" press="onOpenSorterDialog" />
 							<SearchField width="14rem" liveChange="onSearch" />
 							<Button type="Ghost" icon="sap-icon://add" tooltip="{i18n>table-users-toolbar-new-todo}" press="navToNewTodoForm" />
 						</content>
