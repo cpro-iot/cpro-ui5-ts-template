@@ -3,6 +3,8 @@
     "lokalise.i18n-ally",
     "redhat.vscode-xml",
     "christian-kohler.path-intellisense",
-    "formulahendry.auto-rename-tag"
+    "formulahendry.auto-rename-tag",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint"
   ]
 }
