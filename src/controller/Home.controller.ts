@@ -15,8 +15,9 @@ export default class HomeController extends BaseController {
     todoModel.register(this);
     todoModel.syncTodos();
   }
-  onPressTableItem(oEvent: Event) {
-    const todoPath = (oEvent.getSource() as ManagedObject)
+
+  onPressTableItem(event: Event) {
+    const todoPath = (event.getSource() as ManagedObject)
       .getBindingContext("todo")
       .getPath();
     const todoItem = todoModel.getProperty(todoPath);

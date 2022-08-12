@@ -18,8 +18,8 @@
 							<Title text="{i18n>table-users-title}" />
 							<ToolbarSpacer />
 							<Button icon="sap-icon://excel-attachment" tooltip="{i18n>table-users-toolbar-download}" press="onPressExport" />
-							<Button icon="sap-icon://add" tooltip="{i18n>table-users-toolbar-new-todo}" press="navToNewTodoForm" />
 							<SearchField width="14rem" liveChange="onSearch" />
+							<Button type="Ghost" icon="sap-icon://add" tooltip="{i18n>table-users-toolbar-new-todo}" press="navToNewTodoForm" />
 						</content>
 					</OverflowToolbar>
 				</headerToolbar>
