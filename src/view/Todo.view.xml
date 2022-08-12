@@ -11,7 +11,7 @@
                         <!-- Form control for the todo title attribute -->
                         <form:FormElement>
                             <form:label>
-                                <Label labelFor="todoTitle" text="Todo title" />
+                                <Label labelFor="todoTitle" text="{i18n>table-users-column-todoTitle}" />
                             </form:label>
                             <form:fields>
                                 <Input required="true" fieldGroupIds="todoFormInput" id="todoTitle" value="{
@@ -27,7 +27,7 @@
                         <!-- Form control for the todo title attribute -->
                         <form:FormElement>
                             <form:label>
-                                <Label labelFor="todoDescription" text="Todo description" />
+                                <Label labelFor="todoDescription" text="{i18n>table-users-column-todoDescription}" />
                             </form:label>
                             <form:fields>
                                 <Input required="true" fieldGroupIds="todoFormInput" id="todoDescription" value="{
@@ -43,7 +43,7 @@
                         <!-- Form control for the completed attribute  -->
                         <form:FormElement>
                             <form:label>
-                                <Label text="Mark as done" labelFor="todoCompleted" />
+                                <Label text="{i18n>table-users-column-todoDone}" labelFor="todoCompleted" />
                             </form:label>
                             <form:fields>
                                 <Switch id="todoCompleted" state="{todo>/form/completed}" customTextOn="Yes" customTextOff="No" />
