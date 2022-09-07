@@ -7,7 +7,6 @@
 				<ToolbarSpacer />
 				<Button icon="sap-icon://key-user-settings" tooltip="Administration" press="openSettings" />
 			</OverflowToolbar>
-
 		</customHeader>
 
 		<content>
@@ -19,6 +18,7 @@
 							<ToolbarSpacer />
 							<Button icon="sap-icon://excel-attachment" tooltip="{i18n>table-users-toolbar-download}" press="onPressExport" />
 							<Button type="Transparent" tooltip="{i18n>table-users-toolbar-sort}" icon="sap-icon://sort" press="onOpenSorterDialog" />
+							<Button type="Transparent" tooltip="{i18n>table-users-toolbar-filter}" icon="sap-icon://filter" press="onOpenFilterDialog" />
 							<SearchField width="14rem" liveChange="onSearch" />
 							<Button type="Ghost" icon="sap-icon://add" tooltip="{i18n>table-users-toolbar-new-todo}" press="navToNewTodoForm" />
 						</content>

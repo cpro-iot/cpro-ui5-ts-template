@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <ViewSettingsDialog confirm="onFilterTodos">
+        <filterItems>
+            <ViewSettingsFilterItem text="Completed?" key="completed" multiSelect="false">
+                <items>
+                    <ViewSettingsItem text="Yes" key="completed___EQ___true" />
+                    <ViewSettingsItem text="No" key="completed___EQ___false" />
+                </items>
+            </ViewSettingsFilterItem>
+            <!-- ... more viewsettingsfilter items -->
+        </filterItems>
+    </ViewSettingsDialog>
+</core:FragmentDefinition>

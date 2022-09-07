@@ -5,9 +5,11 @@ import FilterOperator from 'sap/ui/model/FilterOperator';
 import BaseController from './BaseController';
 import { todoModel, messageModel } from '../model/provider';
 import {
-  AppBinding,
+  AppTableItemsBinding,
   AppEventProvider,
   AppSortEventParameters,
+  AppSortKeyTuple,
+  AppFilterEventParameters,
 } from '../@types/UI5Shims';
 import Dialog from 'sap/m/Dialog';
 import Fragment from 'sap/ui/core/Fragment';
@@ -18,7 +20,7 @@ import Sorter from 'sap/ui/model/Sorter';
  */
 export default class HomeController extends BaseController {
   private homeDialogTableFilterPath =
-    'cpro/ui5/__kunde__/__projekt__/view/Fragments/TableFilter';
+    'cpro/ui5/__kunde__/__projekt__/view/Fragments/TodoTableFilter';
   private homeDialogTableSorterPath =
     'cpro/ui5/__kunde__/__projekt__/view/Fragments/TodoTableSorter';
 
@@ -50,7 +52,7 @@ export default class HomeController extends BaseController {
       );
     }
 
-    (tableControl.getBinding('items') as AppBinding).filter(
+    (tableControl.getBinding('items') as AppTableItemsBinding).filter(
       appliedFilters.length === 0 ? [] : new Filter(appliedFilters, false),
     );
   }
@@ -68,6 +70,20 @@ export default class HomeController extends BaseController {
     this.homeDialogs[this.homeDialogTableSorterPath].open();
   }
 
+  async onOpenFilterDialog() {
+    const view = this.getView();
+    const path = this.homeDialogTableFilterPath;
+
+    if (!this.homeDialogs[path]) {
+      this.homeDialogs[path] = (await Fragment.load({
+        name: path,
+        controller: this,
+      })) as Dialog;
+      view.addDependent(this.homeDialogs[path]);
+    }
+    this.homeDialogs[path].open();
+  }
+
   sortTodos(event: Event) {
     const tableControl = this.getView().byId('table-users');
     const parameters = event.getParameters() as AppSortEventParameters;
@@ -75,7 +91,30 @@ export default class HomeController extends BaseController {
     const descending: boolean = parameters.sortDescending;
     const sorters = [];
     sorters.push(new Sorter(key, descending));
-    (tableControl.getBinding('items') as AppBinding).sort(sorters);
+    (tableControl.getBinding('items') as AppTableItemsBinding).sort(sorters);
+  }
+
+  onFilterTodos(event: Event) {
+    const tableControl = this.getView().byId('table-users');
+    const params = event.getParameters() as AppFilterEventParameters;
+    const filters: Filter[] = [];
+
+    params.filterItems.forEach((filterItem) => {
+      let [itemKey, itemOperator, itemValue] = filterItem
+        .getKey()
+        .split('___') as AppSortKeyTuple;
+
+      if (itemValue === 'true') itemValue = true;
+      if (itemValue === 'false') itemValue = false;
+
+      filters.push(
+        new Filter(itemKey, FilterOperator[itemOperator], itemValue),
+      );
+    });
+
+    (tableControl.getBinding('items') as AppTableItemsBinding).filter(
+      filters.length === 0 ? filters : new Filter(filters, false),
+    );
   }
 
   onPressExport() {
