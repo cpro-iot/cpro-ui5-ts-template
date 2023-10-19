@@ -13,6 +13,7 @@ import Dialog from 'sap/m/Dialog';
 import Fragment from 'sap/ui/core/Fragment';
 import Sorter from 'sap/ui/model/Sorter';
 import {render} from '../components/react'
+import HTML from 'sap/ui/core/HTML';
 
 /**
  * @namespace cpro.ui5.__kunde__.__projekt__.controller.Home
@@ -32,7 +33,9 @@ export default class HomeController extends BaseController {
   }
 
   onAfterRendering(): void {
-    render()
+    const el = this.getView().byId('react') as HTML;
+    el.setContent(`<div id=${el.getId()}></div>`);
+    render(el.getId())
   }
 
   onPressTableItem(event: Event) {
