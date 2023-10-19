@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "Best-practice starting point for building a freestyle app",
   "scripts": {
-    "compile": "npx babel src --out-dir webapp --source-maps true --extensions \".ts,.js\" --copy-files",
-    "watch": "npx babel src --out-dir webapp --source-maps true --extensions \".ts,.js\" --copy-files --watch",
+    "compile": "npx babel src --out-dir webapp --source-maps true --extensions \".ts,.js,.jsx\" --copy-files",
+    "watch": "npx babel src --out-dir webapp --source-maps true --extensions \".ts,.js,.jsx\" --copy-files --watch",
     "start": "ui5 serve -o index.html --accept-remote-connections --config ui5-dev.yaml",
     "dev": "concurrently \"npm run watch\"  \"npm run start\"",
     "lint": "eslint webapp",
@@ -16,7 +16,9 @@
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.2",
+    "@babel/plugin-syntax-jsx": "^7.22.5",
     "@babel/preset-env": "^7.23.2",
+    "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.23.2",
     "@types/openui5": "^1.119.1",
     "@ui5/cli": "^3.7.0",
@@ -44,6 +46,8 @@
     ]
   },
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "xlsx": "^0.18.5"
   }
 }

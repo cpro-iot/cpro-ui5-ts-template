@@ -21,6 +21,7 @@
 							<Button type="Transparent" tooltip="{i18n>table-users-toolbar-sort}" icon="sap-icon://sort" press="onOpenSorterDialog" />
 							<SearchField width="14rem" liveChange="onSearch" />
 							<Button type="Ghost" icon="sap-icon://add" tooltip="{i18n>table-users-toolbar-new-todo}" press="navToNewTodoForm" />
+								<core:HTML id="react" content='&lt;div id=&quot;container-basicTemplate---home--react&quot;&gt;&lt;h4&gt;Lorem ipsum&lt;/h4&gt;&lt;/div&gt;'></core:HTML>
 						</content>
 					</OverflowToolbar>
 				</headerToolbar>
