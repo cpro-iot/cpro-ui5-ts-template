@@ -83,8 +83,10 @@ export default class TodoModel extends BaseModel<Todo> {
   }
 
   public addTodo(todo: Todo) {
-    this.setProperty('/collection', [...this.getCollection(), todo]);
-    this.setProperty('/form', { ...initialForm });
+    const collection = this.getProperty('/collection');
+    const id = collection.length + 1;
+    const newEntry = { ...todo, id };
+    this.setProperty('/collection', [...collection, newEntry]);
   }
 
   public addFormToCollection() {
