@@ -6,14 +6,16 @@
   <a href="https://github.com/cpro-iot">
     <img src="https://www.cpro-iot.de/wp-content/uploads/Logo-mit-Claim_weiss-1920x204.png" alt="Logo" width="480" height="60">
   </a>
-  
+
 <h3 align="center">OpenUI5 Typescript template</h3>
 
   <p align="center">
-  An opinionated Typescript template for developing (Open)UI5 apps. 
+  An opinionated Typescript template for developing (Open)UI5 apps.
     <br />
     <br />
   </p>
+
+  <p>Based on the  <a href="https://github.com/SAP-samples/ui5-typescript-helloworld/blob/main/step-by-step.md">official SAP UI5 guidelines to create a UI5 TS app</a></p>
 </div>
 
 ## About the project
