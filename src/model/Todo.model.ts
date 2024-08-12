@@ -1,5 +1,4 @@
 import BaseModel from './BaseModel';
-import * as Xlsx from 'xlsx';
 
 interface Todo {
   userId: number;
@@ -132,11 +131,4 @@ export default class TodoModel extends BaseModel<Todo> {
     this.setProperty('/form', { ...initialForm });
   }
 
-  async exportTodosToExcel() {
-    const data = this.getCollection();
-    const workbook = Xlsx.utils.book_new();
-    const sheet = Xlsx.utils.json_to_sheet(data);
-    Xlsx.utils.book_append_sheet(workbook, sheet, 'My Todos');
-    Xlsx.writeFile(workbook, 'Todos.xls');
-  }
 }

@@ -1,0 +1,27 @@
+{
+  "name": "Cpro IoT UI5 Template",
+  "short_name": "Cpro IoT",
+  "start_url": ".",
+  "display": "standalone",
+  "categories": ["demo", "iot", "production"],
+  "background_color": "#fff",
+  "description": "A demo application with UI5 and offline support",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [{
+    "name": "Settings",
+    "short_name": "Settings",
+    "description": "Open Settings",
+    "url": "./#/about"
+  }]
+}

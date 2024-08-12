@@ -11,7 +11,7 @@
     "karma": "karma start",
     "karma-ci": "karma start karma-ci.conf.js",
     "test": "npm run lint && rimraf coverage && npm run karma-ci",
-    "build": "npm run compile && rimraf dist && ui5 build --a"
+    "build": "npm run compile && rimraf dist && ui5 build --a && workbox generateSW workbox-config.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
@@ -36,7 +36,8 @@
     "typescript": "^5.2.2",
     "ui5-middleware-livereload": "^3.0.2",
     "ui5-middleware-simpleproxy": "^3.2.6",
-    "ui5-tooling-modules": "^3.2.2"
+    "ui5-tooling-modules": "^3.2.2",
+    "workbox-cli": "^7.1.0"
   },
   "ui5": {
     "dependencies": [
@@ -47,7 +48,6 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "xlsx": "^0.18.5"
+    "react-dom": "^18.2.0"
   }
 }

@@ -22,5 +22,14 @@ export default class Component extends UIComponent {
 
     // create the views based on the url/hash
     this.getRouter().initialize();
+
+    // Install the service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').then(function (registration) {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function (err) {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
   }
 }

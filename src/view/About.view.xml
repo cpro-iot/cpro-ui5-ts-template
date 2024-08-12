@@ -14,7 +14,6 @@
                     </VBox>
                     <Panel expandable="true" width="24em" headerText="{i18n>about-attributions}">
                         <content>
-                            <Link href="https://docs.sheetjs.com/docs/miscellany/license" text="SheetJS is licensed under the Apache 2.0 License" />
                             <Link href="https://github.com/SAP/openui5/blob/master/LICENSE.txt" text="OpenUI5 is licensed under the Apache 2.0 License" />
                         </content>
                     </Panel>
