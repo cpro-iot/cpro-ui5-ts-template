@@ -23,13 +23,32 @@ export default class Component extends UIComponent {
     // create the views based on the url/hash
     this.getRouter().initialize();
 
+    this.installServiceWorker();
+  }
+
+  private installServiceWorker() {
     // Install the service worker
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js').then(function (registration) {
-        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        // request permission for a desktop notification and show it
+        Notification.requestPermission().then(granted => {
+          if (granted) {
+            new Notification('Cpro app installed', {
+              icon: 'assets/icon-192.png',
+              body: 'This app is now ready for offline usage. If you have previously installed this app, please refresh the page',
+              tag: "cpro-app-installed",
+              badge: "assets/icon-192.png"
+            }).addEventListener('click', () => {
+              window.location.reload();
+              window.focus();
+            })
+          }
+        })
       }).catch(function (err) {
         console.log('ServiceWorker registration failed: ', err);
       });
+    } else {
+      console.warn('No service worker support in this browser');
     }
   }
 }

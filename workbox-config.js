@@ -8,5 +8,6 @@ module.exports = {
 	ignoreURLParametersMatching: [
 		/^utm_/,
 		/^fbclid$/
-	]
+	],
+	skipWaiting: true,
 };
