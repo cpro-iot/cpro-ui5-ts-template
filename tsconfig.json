@@ -9,6 +9,7 @@
     "strict": true,
     "strictNullChecks": false,
     "strictPropertyInitialization": false,
+    "jsx": "react",
     "rootDir": "./src",
     "outDir": "./dist",
     "baseUrl": "./",

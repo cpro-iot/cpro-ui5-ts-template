@@ -5,6 +5,7 @@ import { AppUserLanguage } from '../model/Config.model';
 import Event from 'sap/ui/base/Event';
 import Popover from 'sap/m/Popover';
 import Fragment from 'sap/ui/core/Fragment';
+import HTML from 'sap/ui/core/HTML';
 
 /**
  * @namespace cpro.ui5.__kunde__.__projekt__.controller.BaseController
@@ -41,6 +42,22 @@ export default class BaseController extends Controller {
 
   public navToNewTodoForm(): void {
     this.getRouter().navTo('todo-form');
+  }
+
+  /**
+   *
+   * @param mountFunction The react mount function of the root component
+   * @param domElementId The id of the dom element on which to render the react component
+   */
+  public bindReactComponent(mountFunction: (id: string) => void, domElementId: string) {
+    const htmlElement = this.byId(domElementId) as HTML;
+    if (!htmlElement) {
+      console.error(`Could not mount react component: Element with id "${domElementId}" is missing.\n\nCheck if you have created a "core:HTML" element with id "${domElementId}" in your XML views and whether its "content" is filled with a placeholder value.\n\n See https://ui5.sap.com/#/api/sap.ui.core.HTML for reference`);
+      return;
+    }
+
+    htmlElement.setContent(`<div id=${htmlElement.getId()}></div>`);
+    mountFunction(htmlElement.getId())
   }
 
   protected toggleDarkTheme(): void {
